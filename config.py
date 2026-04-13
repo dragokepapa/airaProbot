@@ -2,59 +2,71 @@ import re
 from os import getenv
 from dotenv import load_dotenv
 from pyrogram import filters
+
 load_dotenv()
 
+# ==========================
+# HIDDEN VARIABLES (ENV)
+# ==========================
 
-API_ID = 25955854
+API_ID = int(getenv("API_ID", 0))
+API_HASH = getenv("API_HASH")
 
-API_HASH = "2ede59823a90cb31442a74f5ae01f675"
+BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_ID = int(getenv("BOT_ID", 0))
 
-BOT_TOKEN = "8287492525:AAHgkD4zbbRk_4937966-WVObyrmIqVPnuw"
+BOT_USERNAME = getenv("BOT_USERNAME")
+OWNER_USERNAME = getenv("OWNER_USERNAME")
 
-BOT_ID = 8287492525
+BOT_NAME = getenv("BOT_NAME")
+ASSUSERNAME = getenv("ASSUSERNAME")
 
-BOT_USERNAME = "rion_xbot"
+MONGO_DB_URI = getenv("MONGO_DB_URI")
 
-OWNER_USERNAME = "SLAYER1237"
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT_MIN", 60))
 
-BOT_NAME = "Shigaraki"
+LOGGER_ID = int(getenv("LOGGER_ID", 0))
+DISASTER_LOG = int(getenv("DISASTER_LOG", 0))
 
-ASSUSERNAME = "DEATH_WISH"
+OWNER_ID = int(getenv("OWNER_ID", 0))
+SPECIAL_USER = int(getenv("SPECIAL_USER", 0))
 
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-MONGO_DB_URI = "mongodb+srv://shigarakisan:demnkin@cluster0.cxt4iov.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-DURATION_LIMIT_MIN = 500000
-
-LOGGER_ID = -1003791371177
-
-DISASTER_LOG = -1003791371177
-
-OWNER_ID = 6018803920
-
-SPECIAL_USER = 7933208850
-
-HEROKU_APP_NAME = None
-
-HEROKU_API_KEY = None
+# ==========================
+# ✅ ONLY VISIBLE VALUE
+# ==========================
 
 UPSTREAM_REPO = "https://github.com/slayer123700/zenitsu-music-main"
-
 UPSTREAM_BRANCH = "master"
 
-GIT_TOKEN = ""
+# ==========================
+# HIDDEN AGAIN
+# ==========================
 
+GIT_TOKEN = getenv("GIT_TOKEN")
 
-SUPPORT_CHANNEL = "https://t.me/MBT_UPDATES"
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT")
 
-SUPPORT_CHAT = "https://t.me/+Fy_y61SmobdkYWRl"
+SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET")
+
+STRING1 = getenv("STRING1")
+STRING2 = getenv("STRING2")
+STRING3 = getenv("STRING3")
+STRING4 = getenv("STRING4")
+STRING5 = getenv("STRING5")
+STRING6 = getenv("STRING6")
+STRING7 = getenv("STRING7")
+
+# ==========================
+# OTHER SETTINGS
+# ==========================
 
 AUTO_LEAVING_ASSISTANT = False
 AUTO_LEAVE_ASSISTANT_TIME = 9000
-
-
-SPOTIFY_CLIENT_ID = "22b6125bfe224587b722d6815002db2b"
-
-SPOTIFY_CLIENT_SECRET = "c9c63c6fbf2f467c8bc68624851e9773"
 
 PLAYLIST_FETCH_LIMIT = 25
 
@@ -64,37 +76,34 @@ TG_VIDEO_FILESIZE_LIMIT = 2147483648
 SONG_DOWNLOAD_DURATION = 9999999
 SONG_DOWNLOAD_DURATION_LIMIT = 9999999
 
-TG_AUDIO_FILESIZE_LIMIT = 2147483648
-TG_VIDEO_FILESIZE_LIMIT = 2147483648
-
-STRING1 = "BQJZsZ4Ad1EkXlwucmeoqqcpgB0gr3xK1yMMNnAWxQYZ8Hgd18hHEhzpz-etWfSEVMrR_tSOK3_l5IjvB9Elv_gWc-lcpnRFG109XCE_nLRcOX0w343DuK9Q2cCw1FVfgBwyHuip0iRBM9tzpFj5WciIjvGnpAEhnQ3LieLm9YzOHFU3tLzkBx3Sy08BYLAt3EUWRP3vQL5wN5Vqz-QX4lxx9wHGYHjzxtvL92vhQpoiyKffGoTHYqaCV3jh3tUePMuYVA3int6FIClXFYvM0ch1LaEQ7ixAwpoSVFskmqg6ckwioyVJJ8ZKerzQQ766B4HgKF89mbrBCW6bU7u3LXQWx9VvIAAAAAHqaaalAA"
-STRING2 = None 
-STRING3 = None 
-STRING4 = None
-STRING5 = None
-STRING6 = None
-STRING7 = None
-
-
 filter = filters.user()
 BANNED_USERS = filter
+
 adminlist = {}
 lyrical = {}
 votemode = {}
 autoclean = []
 confirmer = {}
 
-START_IMG_URL =  "https://files.catbox.moe/iffmnv.jpg"
-PLAYLIST_IMG_URL = "https://files.catbox.moe/bggrlh.jpg"
-STATS_IMG_URL = "https://files.catbox.moe/iffmnv.jpg"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/f3yuiy.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/urv7wi.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/6khxhw.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/2tcim5.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/bggrlh.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/iffmnv.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/6khxhw.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/jkqyg2.jpg"
+# ==========================
+# IMAGES (ENV SAFE)
+# ==========================
+
+START_IMG_URL = getenv("START_IMG_URL")
+PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL")
+STATS_IMG_URL = getenv("STATS_IMG_URL")
+TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL")
+TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL")
+STREAM_IMG_URL = getenv("STREAM_IMG_URL")
+SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL")
+YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL")
+SPOTIFY_ARTIST_IMG_URL = getenv("SPOTIFY_ARTIST_IMG_URL")
+SPOTIFY_ALBUM_IMG_URL = getenv("SPOTIFY_ALBUM_IMG_URL")
+SPOTIFY_PLAYLIST_IMG_URL = getenv("SPOTIFY_PLAYLIST_IMG_URL")
+
+# ==========================
+# FUNCTIONS
+# ==========================
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -102,14 +111,13 @@ def time_to_seconds(time):
 
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
-if SUPPORT_CHANNEL:
-    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
-        )
 
-if SUPPORT_CHAT:
-    if not re.match("(?:http|https)://", SUPPORT_CHAT):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-        )
+# ==========================
+# VALIDATION
+# ==========================
+
+if SUPPORT_CHANNEL and not re.match("(?:http|https)://", SUPPORT_CHANNEL):
+    raise SystemExit("[ERROR] SUPPORT_CHANNEL must start with https://")
+
+if SUPPORT_CHAT and not re.match("(?:http|https)://", SUPPORT_CHAT):
+    raise SystemExit("[ERROR] SUPPORT_CHAT must start with https://")
