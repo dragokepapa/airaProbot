@@ -37,11 +37,11 @@ HEROKU_APP_NAME = None
 
 HEROKU_API_KEY = None
 
-UPSTREAM_REPO = ""
+UPSTREAM_REPO = "https://github.com/slayer123700/zenitsu-music-main"
 
 UPSTREAM_BRANCH = "master"
 
-GIT_TOKEN = ""
+GIT_TOKEN = " "
 
 
 SUPPORT_CHANNEL = "https://t.me/MBT_UPDATES"
