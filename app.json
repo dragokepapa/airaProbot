@@ -1,63 +1,35 @@
 {
-  "name": "Zenitsu-Music-Bot",
-  "description": "Telegram Music Bot powered by Python and Node.js",
+  "name": "Aira Pro Bot",
+  "description": "Telegram userbot / bot deploy",
+  "logo": "https://telegra.ph/file/3b6e0a2c5b9e9f1c9c1d2.jpg",
+  "keywords": ["telegram", "bot", "userbot", "pyrogram"],
   "repository": "https://github.com/dragokepapa/airaProbot",
-  "logo": "https://files.catbox.moe/0zinto.jpg",
+  "website": "https://github.com/dragokepapa/airaProbot",
+  "success_url": "/",
+  "stack": "heroku-22",
+
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+
   "env": {
     "API_ID": {
-      "description": "API ID from Telegram",
-      "value": ""
+      "description": "Get from my.telegram.org",
+      "required": true
     },
     "API_HASH": {
-      "description": "API HASH from Telegram",
-      "value": ""
+      "description": "Get from my.telegram.org",
+      "required": true
     },
     "BOT_TOKEN": {
-      "description": "Bot Token for your Telegram bot",
-      "value": ""
+      "description": "Get from @BotFather",
+      "required": true
     },
-    "MONGO_DB_URI": {
-      "description": "MongoDB connection URI",
-      "value": ""
-    },
-    "LOGGER_ID": {
-      "description": "Logger Group ID",
-      "value": ""
-    },
-    "OWNER_ID": {
-      "description": "Your Telegram ID",
-      "value": ""
-    },
-    "SUPPORT_CHANNEL": {
-      "description": "Support Channel URL",
-      "value": "https://t.me/MBT_UPDATES"
-    },
-    "SUPPORT_CHAT": {
-      "description": "Support Chat URL",
-      "value": "https://t.me/+ytk9hkZfGjY3MDRl"
-    },
-    "STRING_SESSION": {
-      "description": "String Session for Telegram Bot",
-      "value": ""
+    "SESSION_STRING": {
+      "description": "Pyrogram session string (if needed)",
+      "required": false
     }
-  },
-  "formation": {
-    "worker": {
-      "quantity": 1
-    }
-  },
-      "buildpacks": [
-          {
-              "url": "heroku/python"
-          },
-          {
-              "url": "heroku/nodejs"
-          },
-          {
-              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-          }
-      ],
-  "scripts": {
-    "postdeploy": "python3 -m Shigaraki"
   }
 }
