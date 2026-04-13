@@ -11,7 +11,7 @@ from Shigaraki.utils.database import (
 )
 from Shigaraki.utils.decorators import AdminActual, language
 from Shigaraki.utils.inline import close_markup
-from config import filter, adminlist
+from config import adminlist
 
 
 @app.on_message(filters.command("auth") & filters.group & ~filter)
