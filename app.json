@@ -6,27 +6,27 @@
   "env": {
     "API_ID": {
       "description": "API ID from Telegram",
-      "value": "25955854"
+      "value": ""
     },
     "API_HASH": {
       "description": "API HASH from Telegram",
-      "value": "2ede59823a90cb31442a74f5ae01f675"
+      "value": ""
     },
     "BOT_TOKEN": {
       "description": "Bot Token for your Telegram bot",
-      "value": "7979900579:AAFqBNSz_nOxXtyDcObsI8kUS56jMSdxrio"
+      "value": ""
     },
     "MONGO_DB_URI": {
       "description": "MongoDB connection URI",
-      "value": "mongodb+srv://shigarakisan:demnkin@cluster0.cxt4iov.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+      "value": ""
     },
     "LOGGER_ID": {
       "description": "Logger Group ID",
-      "value": "-1002392274240"
+      "value": ""
     },
     "OWNER_ID": {
       "description": "Your Telegram ID",
-      "value": "6018803920"
+      "value": ""
     },
     "SUPPORT_CHANNEL": {
       "description": "Support Channel URL",
@@ -38,7 +38,7 @@
     },
     "STRING_SESSION": {
       "description": "String Session for Telegram Bot",
-      "value": "BQGMDg4Aa8AuIE8PlTbZY_OF3n5LPXRZRS68HecAY6t3t0dbgxNP9J6A4RhY0ci_n83bMRUGOe1m055koRLl5jmG9xxBodFbVJ9c769xEGmIbJ4p_ErLrEq3WMSsqR2taajwPClfOI4ax2nDjQxOvOVl7UJhnh-K-gT1ow4uVGn5wULyd0JcPXOMtGqdi2A-ABJM6atC25GbVAOvNTKBI0MAz9iRjiQxJXChG8yQpBgjmXjRj237V4Dac4GxwdHeoFLndGsPm3ZkHmbHRRjs2offdZcM_j6Hrw7HYyHMDTF_V2Pf7hVhbpzqesG1STSV7ilsZqq4Yzrvuqj96i_lgYXm0NfHFAAAAAHXGk-qAA"
+      "value": ""
     }
   },
   "formation": {
