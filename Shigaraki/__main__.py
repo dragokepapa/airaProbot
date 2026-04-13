@@ -10,7 +10,7 @@ from Shigaraki.core.call import Shigaraki
 from Shigaraki.misc import sudo
 from Shigaraki.plugins import ALL_MODULES
 from Shigaraki.utils.database import get_banned_users, get_gbanned
-from config import filter
+#from config import filter
 
 
 async def init():
