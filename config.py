@@ -89,18 +89,17 @@ confirmer = {}
 # IMAGES (ENV SAFE)
 # ==========================
 
-START_IMG_URL = getenv("START_IMG_URL")
-PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL")
-STATS_IMG_URL = getenv("STATS_IMG_URL")
-TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL")
-TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL")
-STREAM_IMG_URL = getenv("STREAM_IMG_URL")
-SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL")
-YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL")
-SPOTIFY_ARTIST_IMG_URL = getenv("SPOTIFY_ARTIST_IMG_URL")
-SPOTIFY_ALBUM_IMG_URL = getenv("SPOTIFY_ALBUM_IMG_URL")
-SPOTIFY_PLAYLIST_IMG_URL = getenv("SPOTIFY_PLAYLIST_IMG_URL")
-
+START_IMG_URL =  "https://files.catbox.moe/iffmnv.jpg"
+PLAYLIST_IMG_URL = "https://files.catbox.moe/bggrlh.jpg"
+STATS_IMG_URL = "https://files.catbox.moe/iffmnv.jpg"
+TELEGRAM_AUDIO_URL = "https://files.catbox.moe/f3yuiy.jpg"
+TELEGRAM_VIDEO_URL = "https://files.catbox.moe/urv7wi.jpg"
+STREAM_IMG_URL = "https://files.catbox.moe/6khxhw.jpg"
+SOUNCLOUD_IMG_URL = "https://files.catbox.moe/2tcim5.jpg"
+YOUTUBE_IMG_URL = "https://files.catbox.moe/bggrlh.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/iffmnv.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/6khxhw.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/jkqyg2.jpg"
 # ==========================
 # FUNCTIONS
 # ==========================
