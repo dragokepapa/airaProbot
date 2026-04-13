@@ -1,123 +1,113 @@
+#
+# Copyright (C) 2021-2022 by TheAloneteam@Github, < https://github.com/TheAloneTeam >.
+#
+# This file is part of < https://github.com/TheAloneTeam/TheAloneMusic > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/TheAloneTeam/TheAloneMusic/blob/master/LICENSE >
+# All rights reserved.
+
 import re
 from os import getenv
+
 from dotenv import load_dotenv
 from pyrogram import filters
 
 load_dotenv()
 
-# ==========================
-# HIDDEN VARIABLES (ENV)
-# ==========================
-
+# Get this value from my.telegram.org/apps
 API_ID = int(getenv("API_ID", 0))
 API_HASH = getenv("API_HASH")
 
+# Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
-BOT_ID = int(getenv("BOT_ID", 0))
 
-BOT_USERNAME = getenv("BOT_USERNAME")
-OWNER_USERNAME = getenv("OWNER_USERNAME")
+# Get your mongo url from cloud.mongodb.com
+MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
-BOT_NAME = getenv("BOT_NAME")
-ASSUSERNAME = getenv("ASSUSERNAME")
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 600))
 
-MONGO_DB_URI = getenv("MONGO_DB_URI")
+# Set this to true if you want post ads automatically
+ADS_MODE = getenv("ADS_MODE", None)
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT_MIN", 60))
-
+# Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", 0))
-DISASTER_LOG = int(getenv("DISASTER_LOG", 0))
 
-OWNER_ID = int(getenv("OWNER_ID", 0))
-SPECIAL_USER = int(getenv("SPECIAL_USER", 0))
+DEBUG_IGNORE_LOG = True
+# Get this value from  on Telegram by /id
+OWNER_ID = int(getenv("OWNER_ID", 8669209490))
 
+## Fill these variables if you're deploying on heroku.
+# Your heroku app name
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+# Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-# ==========================
-# ✅ ONLY VISIBLE VALUE
-# ==========================
+UPSTREAM_REPO = getenv(
+    "UPSTREAM_REPO",
+    "https://github.com/dragokepapa/AloneMusic",
+)
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+GIT_TOKEN = getenv(
+    "GIT_TOKEN", None
+)  # Fill this variable if your upstream repository is private
 
-UPSTREAM_REPO = "https://github.com/slayer123700/zenitsu-music-main"
-UPSTREAM_BRANCH = "master"
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/OnyxCoders")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+5mEwROfbhjxhYjZl")
 
-# ==========================
-# HIDDEN AGAIN
-# ==========================
+# Set this to True if you want the assistant to automatically leave chats after an interval
+AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", None))
 
-GIT_TOKEN = getenv("GIT_TOKEN")
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT")
+# Get this credentials from https://developer.spotify.com/dashboard
+SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
+SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
 
-AUTO_LEAVING_ASSISTANT = False
-AUTO_LEAVE_ASSISTANT_TIME = 9000
 
-SPOTIFY_CLIENT_ID = "22b6125bfe224587b722d6815002db2b"
+# Maximum limit for fetching playlist's track from youtube, spotify, apple links.
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
 
-SPOTIFY_CLIENT_SECRET = "c9c63c6fbf2f467c8bc68624851e9773"
 
-PLAYLIST_FETCH_LIMIT = 25
+# Telegram audio and video file size limit (in bytes)
+TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 104857600))
+TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
+# Checkout https://www.gbmb.org/mb-to-bytes for converting mb to bytes
 
-TG_AUDIO_FILESIZE_LIMIT = 2147483648
-TG_VIDEO_FILESIZE_LIMIT = 2147483648
 
-SONG_DOWNLOAD_DURATION = 9999999
-SONG_DOWNLOAD_DURATION_LIMIT = 9999999
+# Get your pyrogram v2 session from @StringFatherBot on Telegram
+STRING1 = getenv("STRING_SESSION", None)
+STRING2 = getenv("STRING_SESSION2", None)
+STRING3 = getenv("STRING_SESSION3", None)
+STRING4 = getenv("STRING_SESSION4", None)
+STRING5 = getenv("STRING_SESSION5", None)
 
-TG_AUDIO_FILESIZE_LIMIT = 2147483648
-TG_VIDEO_FILESIZE_LIMIT = 2147483648
 
-STRING1 = getenv("STRING1")
-STRING2 = getenv("STRING2")
-STRING3 = getenv("STRING3")
-STRING4 = getenv("STRING4")
-STRING5 = getenv("STRING5")
-STRING6 = getenv("STRING6")
-STRING7 = getenv("STRING7")
-
-# ==========================
-# OTHER SETTINGS
-# ==========================
-
-AUTO_LEAVING_ASSISTANT = False
-AUTO_LEAVE_ASSISTANT_TIME = 9000
-
-PLAYLIST_FETCH_LIMIT = 25
-
-TG_AUDIO_FILESIZE_LIMIT = 2147483648
-TG_VIDEO_FILESIZE_LIMIT = 2147483648
-
-SONG_DOWNLOAD_DURATION = 9999999
-SONG_DOWNLOAD_DURATION_LIMIT = 9999999
-
-filter = filters.user()
-BANNED_USERS = filter
-
+BANNED_USERS = filters.user()
 adminlist = {}
 lyrical = {}
 votemode = {}
 autoclean = []
 confirmer = {}
 
-# ==========================
-# IMAGES (ENV SAFE)
-# ==========================
 
-START_IMG_URL =  "https://files.catbox.moe/iffmnv.jpg"
-PLAYLIST_IMG_URL = "https://files.catbox.moe/bggrlh.jpg"
-STATS_IMG_URL = "https://files.catbox.moe/iffmnv.jpg"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/f3yuiy.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/urv7wi.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/6khxhw.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/2tcim5.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/bggrlh.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/iffmnv.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/6khxhw.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/jkqyg2.jpg"
-# ==========================
-# FUNCTIONS
-# ==========================
+START_IMG_URL = getenv(
+    "START_IMG_URL",
+    "https://files.catbox.moe/34xlvu.jpg",
+)
+PING_IMG_URL = getenv(
+    "PING_IMG_URL",
+    "https://files.catbox.moe/34xlvu.jpg",
+)
+PLAYLIST_IMG_URL = "https://files.catbox.moe/d6d42f.jpg"
+STATS_IMG_URL = "https://files.catbox.moe/d6d42f.jpg"
+TELEGRAM_AUDIO_URL = "https://files.catbox.moe/d6d42f.jpg"
+TELEGRAM_VIDEO_URL = "https://files.catbox.moe/d6d42f.jpg"
+STREAM_IMG_URL = "https://files.catbox.moe/d6d42f.jpg"
+SOUNCLOUD_IMG_URL = "https://files.catbox.moe/34xlvu.jpg"
+YOUTUBE_IMG_URL = "https://files.catbox.moe/34xlvu.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/34xlvu.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/34xlvu.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/34xlvu.jpg"
+
 
 def time_to_seconds(time):
     stringt = str(time)
@@ -126,12 +116,15 @@ def time_to_seconds(time):
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 
-# ==========================
-# VALIDATION
-# ==========================
 
-if SUPPORT_CHANNEL and not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-    raise SystemExit("[ERROR] SUPPORT_CHANNEL must start with https://")
+if SUPPORT_CHANNEL:
+    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
+        raise SystemExit(
+            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+        )
 
-if SUPPORT_CHAT and not re.match("(?:http|https)://", SUPPORT_CHAT):
-    raise SystemExit("[ERROR] SUPPORT_CHAT must start with https://")
+if SUPPORT_CHAT:
+    if not re.match("(?:http|https)://", SUPPORT_CHAT):
+        raise SystemExit(
+            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
+        )
