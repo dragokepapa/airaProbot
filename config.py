@@ -41,7 +41,7 @@ UPSTREAM_REPO = "https://github.com/slayer123700/zenitsu-music-main"
 
 UPSTREAM_BRANCH = "master"
 
-GIT_TOKEN = " "
+GIT_TOKEN = ""
 
 
 SUPPORT_CHANNEL = "https://t.me/MBT_UPDATES"
