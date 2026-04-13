@@ -14,7 +14,7 @@ from Shigaraki.utils.inline import close_markup
 from config import adminlist
 
 
-@app.on_message(filters.command("auth") & filters.group & ~filter)
+@app.on_message(filters.command("auth") & filters.group)
 @AdminActual
 async def auth(client, message: Message, _):
     if not message.reply_to_message:
